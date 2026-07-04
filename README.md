@@ -24,8 +24,8 @@ The dataset (data/predictive_maintenance.csv) contains sensor readings from indu
 | Target | 0 = No Failure, 1 = Failure |
 | Failure Type | Type of failure (if any) |
 
-## Repository Structure
-`
+
+
 ## 📂 Repository Structure
 
 ```text
