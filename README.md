@@ -8,6 +8,16 @@ The Smart Predictive System for Industrial Machinery Using Machine Learning is a
 - **Method:** AutoAI (Automated Machine Learning)
 - **Creator:** psusmija@gmail.com
 
+## 🚀 Features
+
+- Predicts machine failures before they occur
+- Supports predictive maintenance strategies
+- Uses IBM watsonx.ai AutoAI for automated model development
+- Performs automatic data preprocessing and feature engineering
+- Optimizes models using hyperparameter tuning
+- Provides high-accuracy machine failure prediction
+- Deployable on IBM Cloud using watsonx.ai Runtime
+
 ## Dataset
 The dataset (data/predictive_maintenance.csv) contains sensor readings from industrial machines with the following features:
 
@@ -23,6 +33,70 @@ The dataset (data/predictive_maintenance.csv) contains sensor readings from indu
 | Tool wear [min] | Tool wear in minutes |
 | Target | 0 = No Failure, 1 = Failure |
 | Failure Type | Type of failure (if any) |
+
+### 🎯 Target Variable
+
+**Target**
+
+- **0** → No Machine Failure
+- **1** → Machine Failure
+
+## 🛠 Technologies Used
+
+- IBM Cloud
+- IBM watsonx.ai Studio
+- IBM watsonx.ai Runtime
+- IBM AutoAI
+- Machine Learning
+- Predictive Analytics
+
+
+## 🤖 Machine Learning Model
+
+**Algorithm Used**
+
+- Batched Tree Ensemble Classifier (Snap Random Forest Classifier)
+
+### Accuracy
+
+**99.9% Cross Validation Accuracy**
+
+---
+
+## 🔄 Project Workflow
+
+1. Data Collection
+2. Data Preprocessing
+3. Feature Engineering
+4. AutoAI Model Training
+5. Hyperparameter Optimization
+6. Model Evaluation
+7. Model Selection
+8. Model Deployment
+9. Machine Failure Prediction
+
+---
+
+## 📈 Benefits
+
+- Reduces unexpected machine failures
+- Minimizes production downtime
+- Improves equipment reliability
+- Lowers maintenance costs
+- Enhances operational efficiency
+- Supports predictive maintenance
+
+---
+
+## 📌 Future Scope
+
+- Integration with Industrial IoT (IIoT)
+- Real-time machine monitoring
+- Explainable AI (XAI)
+- Mobile and Web Dashboard
+- Cloud-based monitoring system
+- Deep Learning-based predictive models
+- Industry 4.0 integration
 
 
 
@@ -50,7 +124,7 @@ Smart-Predictive-System/
 ```
 `
 
-## ML Approach
+## Model Approach
 - **Tool:** IBM AutoAI (automated pipeline generation)
 - **Best Pipeline:** P9 (selected by AutoAI based on accuracy metrics)
 - **Task:** Binary classification — predict machine failure (Target: 0 or 1)
@@ -68,6 +142,25 @@ Smart-Predictive-System/
 - Python 3.8+
 - ibm-watson-machine-learning
 - pandas, scikit-learn, utoai-libs
+
+## 👨‍💻 Developed By
+
+**Susmija Punnam**
+
+AICTE – Edunet Foundation – IBM SkillsBuild Internship
+
+---
+
+## 🙏 Acknowledgements
+
+I would like to express my sincere gratitude to:
+
+- AICTE
+- Edunet Foundation Team
+- IBM SkillsBuild
+- IBM watsonx.ai Services
+- Internship Mentors
+for providing the opportunity, guidance, and resources to successfully complete this project.
 
 ## License
 This project was developed as part of the AICTE–IBM University Engagement programme.
