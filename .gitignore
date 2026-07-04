@@ -1,0 +1,29 @@
+﻿# IBM credentials / secrets
+.env
+*.env
+ibm_credentials.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large model files (optional - remove if you want to track them)
+# *.bin
