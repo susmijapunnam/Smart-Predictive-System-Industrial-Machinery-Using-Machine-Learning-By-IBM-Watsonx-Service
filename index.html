@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Predictive Maintenance System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════
+     SIDEBAR
+════════════════════════════════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon">⚙️</div>
+    <h2>Smart Predictive<br>Maintenance System</h2>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="nav-item active" data-page="page-home">
+      <span class="nav-icon">🏠</span> Home
+    </a>
+    <a class="nav-item" data-page="page-dashboard">
+      <span class="nav-icon">📊</span> Dashboard
+    </a>
+    <a class="nav-item" data-page="page-history">
+      <span class="nav-icon">🕐</span> Prediction History
+    </a>
+    <a class="nav-item" data-page="page-analytics">
+      <span class="nav-icon">📈</span> Analytics
+    </a>
+    <a class="nav-item" data-page="page-about">
+      <span class="nav-icon">💡</span> About Project
+    </a>
+    <a class="nav-item" data-page="page-contact">
+      <span class="nav-icon">✉️</span> Contact
+    </a>
+  </nav>
+
+  <div class="sidebar-status">
+    <span class="status-dot"></span>
+    <span style="color:#64748b;font-size:12px;">Model Status: <strong style="color:#10b981;">Online</strong></span>
+  </div>
+  <div style="padding:10px 18px 16px;font-size:11px;color:#334155;line-height:1.5;">
+    AI-Powered Maintenance.<br>Reduce downtime, improve productivity.
+  </div>
+</aside>
+
+<!-- Overlay for mobile -->
+<div class="overlay"></div>
+
+<!-- ════════════════════════════════════════════════════════
+     MAIN WRAP
+════════════════════════════════════════════════════════ -->
+<div class="main-wrap">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="hamburger" aria-label="Menu">☰</button>
+      <span class="topbar-title" id="topbar-title">Home</span>
+    </div>
+    <div class="topbar-right">
+      <span class="badge badge-online">● Model Status: Online</span>
+      <span class="badge badge-warning" style="display:none" id="badge-alert">⚠ 3 Alerts</span>
+      <div class="topbar-avatar" title="Admin">A</div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       PAGE CONTENT
+  ══════════════════════════════════════════════════════ -->
+  <main class="page-content">
+
+    <!-- ─────────────────────────────────────────────────
+         PAGE 1 · HOME
+    ───────────────────────────────────────────────────── -->
+    <section class="page active" id="page-home">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-content">
+          <div class="badge badge-online" style="margin-bottom:16px;display:inline-flex;">
+            ● AI-Powered · IBM Watsonx
+          </div>
+          <h1>SMART PREDICTIVE<br>MAINTENANCE SYSTEM</h1>
+          <p>Predict potential failures in industrial machinery using Machine Learning to minimize downtime and maximize efficiency. Real-time monitoring across your entire machine fleet.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" data-page="page-dashboard">
+              📊 Go to Dashboard
+            </button>
+            <button class="btn btn-secondary btn-lg" data-page="page-history">
+              🔍 View Predictions
+            </button>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="health-ring glow-green">98%</div>
+          <div class="health-ring-label">System Health</div>
+          <div class="badge badge-online" style="margin-top:8px;">✅ Healthy</div>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="stats-grid">
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#00d4ff,#0099cc);--icon-bg:rgba(0,212,255,.1)">
+          <div class="stat-icon">🏭</div>
+          <div class="stat-value">12,450</div>
+          <div class="stat-label">Machines Monitored</div>
+          <div class="stat-change up">↑ Real-time monitoring</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#10b981,#059669);--icon-bg:rgba(16,185,129,.1)">
+          <div class="stat-icon">✅</div>
+          <div class="stat-value" style="color:var(--accent3)">97.8%</div>
+          <div class="stat-label">Prediction Accuracy</div>
+          <div class="stat-change up">↑ Without Maintenance</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#f59e0b,#d97706);--icon-bg:rgba(245,158,11,.1)">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-value" style="color:var(--warning)">1,248</div>
+          <div class="stat-label">Failure Prevented</div>
+          <div class="stat-change up">↑ Total Estimated</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#10b981,#059669);--icon-bg:rgba(16,185,129,.1)">
+          <div class="stat-icon">💵</div>
+          <div class="stat-value" style="color:var(--accent3)">$2.4M</div>
+          <div class="stat-label">Cost Saved</div>
+          <div class="stat-change up">↑ This Month</div>
+        </div>
+      </div>
+
+      <!-- QUICK PREDICTION + RECENT -->
+      <div class="grid-21" style="margin-top:0">
+        <div class="card">
+          <div class="card-header">
+            <h3>⚡ Quick Prediction</h3>
+            <span class="badge badge-online">Live</span>
+          </div>
+          <div class="form-grid" style="margin-bottom:16px">
+            <div class="form-group">
+              <label>Air Temperature (°C)</label>
+              <input type="number" id="inp-temp" value="75" placeholder="Enter temperature" />
+            </div>
+            <div class="form-group">
+              <label>Process Temperature (°C)</label>
+              <input type="number" id="inp-press" value="50" placeholder="Enter temp" />
+            </div>
+            <div class="form-group">
+              <label>Rotational Speed (rpm)</label>
+              <input type="number" id="inp-speed" value="1450" placeholder="Enter speed" />
+            </div>
+            <div class="form-group">
+              <label>Noise (dB)</label>
+              <input type="number" id="inp-noise" value="65" placeholder="Enter noise" />
+            </div>
+            <div class="form-group">
+              <label>Tool Wear (hours)</label>
+              <input type="number" id="inp-hours" value="800" placeholder="Tool wear" />
+            </div>
+            <div class="form-group">
+              <label>Machine Type</label>
+              <select>
+                <option>Type H</option>
+                <option>Type M</option>
+                <option>Type L</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" style="width:100%" onclick="runPrediction()">
+            ⚙️ Predict Machine Health
+          </button>
+          <div id="prediction-output" style="margin-top:16px"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>🕐 Recent Predictions</h3>
+            <button class="btn btn-secondary btn-sm" data-page="page-history">View All</button>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background:rgba(16,185,129,.15)">✅</div>
+              <div class="timeline-body">
+                <h4>Machine-ID: MCH-9824</h4>
+                <div class="health-badge health-healthy" style="margin:4px 0">Healthy</div>
+                <time>3 min ago</time>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background:rgba(245,158,11,.15)">⚠️</div>
+              <div class="timeline-body">
+                <h4>Machine-ID: MCH-1020</h4>
+                <div class="health-badge health-at-risk" style="margin:4px 0">At Risk</div>
+                <time>11 min ago</time>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background:rgba(239,68,68,.15)">🚨</div>
+              <div class="timeline-body">
+                <h4>Machine-ID: MCH-3042</h4>
+                <div class="health-badge health-failure" style="margin:4px 0">Failure Predicted</div>
+                <time>1 hour ago</time>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background:rgba(16,185,129,.15)">✅</div>
+              <div class="timeline-body">
+                <h4>Machine-ID: MCH-5821</h4>
+                <div class="health-badge health-healthy" style="margin:4px 0">Healthy</div>
+                <time>2 hours ago</time>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         PAGE 2 · DASHBOARD
+    ───────────────────────────────────────────────────── -->
+    <section class="page" id="page-dashboard">
+      <div class="section-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Real-time overview of all machines and predictions</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <span class="badge badge-warning">⚠ 3 Machines At Risk</span>
+          <button class="btn btn-primary btn-sm">↻ Refresh</button>
+        </div>
+      </div>
+
+      <!-- KPI STATS -->
+      <div class="stats-grid">
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#00d4ff,#0099cc);--icon-bg:rgba(0,212,255,.1)">
+          <div class="stat-icon">🏭</div>
+          <div class="stat-value">12,450</div>
+          <div class="stat-label">Total Machines</div>
+          <div class="stat-change up">↑ +24 this week</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#10b981,#059669);--icon-bg:rgba(16,185,129,.1)">
+          <div class="stat-icon">✅</div>
+          <div class="stat-value" style="color:var(--accent3)">11,230</div>
+          <div class="stat-label">Healthy Machines</div>
+          <div class="stat-change up">↑ 90.2%</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#f59e0b,#d97706);--icon-bg:rgba(245,158,11,.1)">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-value" style="color:var(--warning)">1,020</div>
+          <div class="stat-label">At Risk Machines</div>
+          <div class="stat-change down">↓ 7.8% flagged</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#ef4444,#dc2626);--icon-bg:rgba(239,68,68,.1)">
+          <div class="stat-icon">🚨</div>
+          <div class="stat-value" style="color:var(--danger)">200</div>
+          <div class="stat-label">Failure Predicted</div>
+          <div class="stat-change down">↓ Needs attention</div>
+        </div>
+      </div>
+
+      <!-- CHARTS ROW -->
+      <div class="grid-2" style="margin-bottom:20px">
+        <div class="card">
+          <div class="card-header">
+            <h3>🩺 Machine Health Overview</h3>
+          </div>
+          <div class="donut-wrap">
+            <canvas id="chart-donut-dash" style="flex-shrink:0"></canvas>
+            <div class="donut-legend">
+              <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span>Healthy — 88.2%</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>At Risk — 7.9%</div>
+              <div class="legend-item"><span class="legend-dot" style="background:#ef4444"></span>Failure — 3.9%</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>📈 Predictions Over Time</h3>
+            <span style="font-size:12px;color:var(--muted)">This Month</span>
+          </div>
+          <canvas id="chart-predictions" style="width:100%"></canvas>
+          <div style="display:flex;gap:16px;margin-top:10px;font-size:11px">
+            <span><span style="color:#10b981">●</span> Healthy</span>
+            <span><span style="color:#f59e0b">●</span> At Risk</span>
+            <span><span style="color:#ef4444">●</span> Failure</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALERTS -->
+      <div class="card" style="margin-bottom:20px">
+        <div class="card-header"><h3>🔔 Active Alerts</h3></div>
+        <div class="alert alert-danger">
+          <span style="font-size:20px">🚨</span>
+          <div><h4>Critical — MCH-3042 · Type H</h4><p>Predicted failure within 2 hours. Temperature: 94.2°C · Vibration: High. Immediate action required.</p></div>
+        </div>
+        <div class="alert alert-warning">
+          <span style="font-size:20px">⚠️</span>
+          <div><h4>Warning — MCH-1020 · Type M</h4><p>Tool wear at 89%. Schedule maintenance within 48 hours. Current health score: 62%.</p></div>
+        </div>
+        <div class="alert alert-success">
+          <span style="font-size:20px">✅</span>
+          <div><h4>Info — Batch scan completed</h4><p>Monthly health scan finished. 11,230 machines healthy, 1,020 flagged for review.</p></div>
+        </div>
+      </div>
+
+      <!-- TOP MACHINES AT RISK -->
+      <div class="card">
+        <div class="card-header">
+          <h3>🔥 Top Machines At Risk</h3>
+          <button class="btn btn-secondary btn-sm" data-page="page-history">Full Report</button>
+        </div>
+        <div style="overflow-x:auto">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Machine ID</th><th>Type</th><th>Health Score</th><th>Risk Level</th><th>Temperature</th><th>Last Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>MCH-3042</td><td>Type H</td><td><div class="progress-bar-wrap" style="min-width:80px"><div style="font-size:12px;margin-bottom:4px">34%</div><div class="progress-bar-track"><div class="progress-bar-fill" style="width:34%;--bar-color:#ef4444"></div></div></div></td><td><span class="health-badge health-failure">Failure</span></td><td>94.2 °C</td><td>5 mins ago</td></tr>
+              <tr><td>MCH-1020</td><td>Type M</td><td><div class="progress-bar-wrap" style="min-width:80px"><div style="font-size:12px;margin-bottom:4px">62%</div><div class="progress-bar-track"><div class="progress-bar-fill" style="width:62%;--bar-color:#f59e0b"></div></div></div></td><td><span class="health-badge health-at-risk">At Risk</span></td><td>82.0 °C</td><td>13 mins ago</td></tr>
+              <tr><td>MCH-0234</td><td>Type L</td><td><div class="progress-bar-wrap" style="min-width:80px"><div style="font-size:12px;margin-bottom:4px">71%</div><div class="progress-bar-track"><div class="progress-bar-fill" style="width:71%;--bar-color:#f59e0b"></div></div></div></td><td><span class="health-badge health-at-risk">At Risk</span></td><td>78.5 °C</td><td>20 mins ago</td></tr>
+              <tr><td>MCH-9821</td><td>Type H</td><td><div class="progress-bar-wrap" style="min-width:80px"><div style="font-size:12px;margin-bottom:4px">79%</div><div class="progress-bar-track"><div class="progress-bar-fill" style="width:79%;--bar-color:#f59e0b"></div></div></div></td><td><span class="health-badge health-at-risk">At Risk</span></td><td>76.1 °C</td><td>31 mins ago</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         PAGE 3 · PREDICTION HISTORY
+    ───────────────────────────────────────────────────── -->
+    <section class="page" id="page-history">
+      <div class="section-header">
+        <div>
+          <h1>Prediction History</h1>
+          <p>View all past predictions and results</p>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <span style="font-size:12px;color:var(--muted)">May 24 – May 31, 2024</span>
+          <button class="btn btn-secondary btn-sm">📅 Filter Date</button>
+          <button class="btn btn-primary btn-sm">⬇ Export CSV</button>
+        </div>
+      </div>
+
+      <!-- SEARCH + FILTERS -->
+      <div class="card" style="margin-bottom:20px">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="history-search" placeholder="Search Machine ID..." oninput="filterHistory(this.value)" />
+          </div>
+          <select id="filter-status" class="form-group" style="background:var(--bg-dark);border:1px solid var(--border);border-radius:8px;padding:9px 14px;color:var(--text);font-size:13px" onchange="filterHistory()">
+            <option value="">All Status</option>
+            <option value="Healthy">Healthy</option>
+            <option value="At Risk">At Risk</option>
+            <option value="Failure Predicted">Failure Predicted</option>
+          </select>
+          <select id="filter-type" style="background:var(--bg-dark);border:1px solid var(--border);border-radius:8px;padding:9px 14px;color:var(--text);font-size:13px" onchange="filterHistory()">
+            <option value="">All Types</option>
+            <option value="Type H">Type H</option>
+            <option value="Type M">Type M</option>
+            <option value="Type L">Type L</option>
+          </select>
+          <span id="history-count" style="font-size:12px;color:var(--muted);margin-left:auto"></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="overflow-x:auto">
+          <table class="data-table" id="history-table">
+            <thead>
+              <tr>
+                <th>Date &amp; Time</th><th>Machine ID</th><th>Type</th><th>Status</th>
+                <th>Health %</th><th>Accuracy</th><th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="history-tbody"></tbody>
+          </table>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;color:var(--muted)">
+          <span id="page-info">Showing 1–10 of 50</span>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-secondary btn-sm" onclick="historyPage(-1)">← Prev</button>
+            <button class="btn btn-secondary btn-sm" onclick="historyPage(1)">Next →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         PAGE 4 · ANALYTICS
+    ───────────────────────────────────────────────────── -->
+    <section class="page" id="page-analytics">
+      <div class="section-header">
+        <div>
+          <h1>Analytics &amp; Insights</h1>
+          <p>Deep-dive into machinery performance trends</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-secondary btn-sm" onclick="setRange(this,'week')" id="range-week">Week</button>
+          <button class="btn btn-primary btn-sm" onclick="setRange(this,'month')" id="range-month">Month</button>
+          <button class="btn btn-secondary btn-sm" onclick="setRange(this,'year')" id="range-year">Year</button>
+          <button class="btn btn-secondary btn-sm">⬇ Export</button>
+        </div>
+      </div>
+
+      <!-- KPI SUMMARY -->
+      <div class="stats-grid" style="margin-bottom:24px">
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#00d4ff,#0099cc);--icon-bg:rgba(0,212,255,.1)">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-value">97.8%</div>
+          <div class="stat-label">Key Accuracy</div>
+          <div class="stat-change up">↑ +0.4% vs last month</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#7c3aed,#6d28d9);--icon-bg:rgba(124,58,237,.1)">
+          <div class="stat-icon">🔮</div>
+          <div class="stat-value">24,560</div>
+          <div class="stat-label">Total Predictions</div>
+          <div class="stat-change up">↑ This month</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#10b981,#059669);--icon-bg:rgba(16,185,129,.1)">
+          <div class="stat-icon">🛡️</div>
+          <div class="stat-value" style="color:var(--accent3)">520</div>
+          <div class="stat-label">Failures Prevented</div>
+          <div class="stat-change up">↑ Cost saved: $1.2M</div>
+        </div>
+        <div class="stat-card" style="--card-accent:linear-gradient(90deg,#f59e0b,#d97706);--icon-bg:rgba(245,158,11,.1)">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-value" style="color:var(--warning)">1200 hrs</div>
+          <div class="stat-label">Downtime Recovered</div>
+          <div class="stat-change up">↑ vs 1850 hrs prev.</div>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div id="analytics-tabs" class="tab-bar">
+        <button class="tab-btn active" data-tab="tab-accuracy" onclick="switchTab(this,'analytics-tabs')">📈 Accuracy</button>
+        <button class="tab-btn" data-tab="tab-failures" onclick="switchTab(this,'analytics-tabs')">⚠️ Failures</button>
+        <button class="tab-btn" data-tab="tab-downtime" onclick="switchTab(this,'analytics-tabs')">⏱ Downtime</button>
+        <button class="tab-btn" data-tab="tab-distribution" onclick="switchTab(this,'analytics-tabs')">🍩 Distribution</button>
+      </div>
+
+      <div id="tab-accuracy" class="tab-panel active">
+        <div class="card">
+          <div class="card-header"><h3>Model Accuracy Over Time</h3></div>
+          <canvas id="chart-accuracy" style="width:100%"></canvas>
+        </div>
+      </div>
+
+      <div id="tab-failures" class="tab-panel">
+        <div class="card">
+          <div class="card-header"><h3>Monthly Failure Count</h3></div>
+          <canvas id="chart-failures" style="width:100%"></canvas>
+        </div>
+      </div>
+
+      <div id="tab-downtime" class="tab-panel">
+        <div class="card">
+          <div class="card-header"><h3>Downtime Hours Recovered per Month</h3></div>
+          <canvas id="chart-downtime" style="width:100%"></canvas>
+        </div>
+      </div>
+
+      <div id="tab-distribution" class="tab-panel">
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header"><h3>Failure Type Distribution</h3></div>
+            <div class="donut-wrap">
+              <canvas id="chart-donut-analytics" style="flex-shrink:0"></canvas>
+              <div class="donut-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span>Healthy — 74%</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>At Risk — 18%</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ef4444"></span>Failure — 8%</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><h3>Machine Type Breakdown</h3></div>
+            <div>
+              <div class="metric-row"><span class="metric-label">Type H Machines</span><span class="metric-value" style="color:var(--accent)">5,420</span></div>
+              <div class="metric-row"><span class="metric-label">Type M Machines</span><span class="metric-value" style="color:var(--accent2)">4,810</span></div>
+              <div class="metric-row"><span class="metric-label">Type L Machines</span><span class="metric-value" style="color:var(--accent3)">2,220</span></div>
+              <div class="metric-row"><span class="metric-label">Total Monitored</span><span class="metric-value">12,450</span></div>
+              <div class="metric-row"><span class="metric-label">Avg Health Score</span><span class="metric-value" style="color:var(--accent3)">88.4%</span></div>
+              <div class="metric-row"><span class="metric-label">Avg Response Time</span><span class="metric-value">1.2 sec</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         PAGE 5 · ABOUT PROJECT
+    ───────────────────────────────────────────────────── -->
+    <section class="page" id="page-about">
+      <div class="section-header">
+        <div>
+          <h1>About Project</h1>
+          <p>Smart Predictive Maintenance System · IBM Watsonx</p>
+        </div>
+      </div>
+
+      <!-- PROJECT OVERVIEW -->
+      <div class="grid-21" style="margin-bottom:24px">
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+            <div style="font-size:48px">⚙️</div>
+            <div>
+              <h2 style="font-size:20px;font-weight:800;color:var(--accent)">Smart Predictive Maintenance System</h2>
+              <p style="color:var(--muted);font-size:13px;margin-top:4px">Powered by IBM Watsonx &amp; Machine Learning</p>
+            </div>
+          </div>
+          <p style="color:#94a3b8;line-height:1.8;font-size:14px">
+            This project uses Machine Learning to predict potential failures in industrial machinery, helping industries minimize downtime and maximize efficiency. By analyzing real-time sensor data including temperature, pressure, rotational speed, tool wear, and vibration, the system provides accurate health predictions for each machine.
+          </p>
+          <p style="color:#94a3b8;line-height:1.8;font-size:14px;margin-top:12px">
+            Built on IBM Watsonx AI infrastructure, the model is trained on the AI4I 2020 Predictive Maintenance Dataset and achieves 97.8% prediction accuracy, enabling proactive maintenance scheduling.
+          </p>
+          <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
+            <button class="btn btn-primary">📄 View Documentation</button>
+            <button class="btn btn-secondary" onclick="navigate('page-dashboard')">📊 Live Demo</button>
+          </div>
+        </div>
+        <div class="card" style="background:var(--bg-card2)">
+          <h3 style="margin-bottom:16px;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Project Stats</h3>
+          <div class="metric-row"><span class="metric-label">Model Type</span><span class="metric-value" style="color:var(--accent)">Random Forest</span></div>
+          <div class="metric-row"><span class="metric-label">Dataset</span><span class="metric-value" style="color:var(--accent2)">AI4I 2020</span></div>
+          <div class="metric-row"><span class="metric-label">Training Samples</span><span class="metric-value">10,000</span></div>
+          <div class="metric-row"><span class="metric-label">Accuracy</span><span class="metric-value" style="color:var(--accent3)">97.8%</span></div>
+          <div class="metric-row"><span class="metric-label">Precision</span><span class="metric-value" style="color:var(--accent3)">96.2%</span></div>
+          <div class="metric-row"><span class="metric-label">Recall</span><span class="metric-value" style="color:var(--accent3)">95.4%</span></div>
+          <div class="metric-row"><span class="metric-label">F1 Score</span><span class="metric-value" style="color:var(--accent3)">95.8%</span></div>
+          <div class="metric-row"><span class="metric-label">Platform</span><span class="metric-value" style="color:#6366f1">IBM Watsonx</span></div>
+        </div>
+      </div>
+
+      <!-- KEY FEATURES -->
+      <h2 style="font-size:18px;font-weight:700;margin-bottom:16px">🔑 Key Features</h2>
+      <div class="grid-3" style="margin-bottom:28px">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:8px">ML-Based Prediction</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.6">Random Forest model trained on real industrial data. Predicts machine health with 97.8% accuracy.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:8px">Real-Time Monitoring</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.6">Continuous sensor data ingestion and analysis. Monitor temperature, pressure, vibration, and RPM live.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:8px">Smart Alerts</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.6">Automated alert system notifies teams of critical risk before failure occurs, enabling proactive action.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:8px">Visual Analytics</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.6">Interactive dashboards with trend analysis, failure distribution charts, and historical predictions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💵</div>
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:8px">Cost Reduction</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.6">Prevent unplanned downtime and save millions in repair costs through predictive scheduling.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:8px">IBM Watsonx Cloud</h3>
+          <p style="color:var(--muted);font-size:13px;line-height:1.6">Deployed on IBM Cloud with Watsonx.ai for enterprise-grade reliability, scalability, and security.</p>
+        </div>
+      </div>
+
+      <!-- TECH STACK -->
+      <div class="card">
+        <div class="card-header"><h3>🛠️ Technology Stack</h3></div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <span class="badge badge-online">🐍 Python</span>
+          <span class="badge badge-online">🤖 Scikit-learn</span>
+          <span class="badge badge-online">📊 Pandas</span>
+          <span class="badge badge-online">🔢 NumPy</span>
+          <span class="badge badge-warning">🌐 Flask / FastAPI</span>
+          <span class="badge badge-warning">☁️ IBM Watsonx</span>
+          <span class="badge badge-warning">🔧 IBM Watson Studio</span>
+          <span style="background:rgba(124,58,237,.15);color:#a78bfa;border:1px solid rgba(124,58,237,.3)" class="badge">🌐 HTML5 / CSS3</span>
+          <span style="background:rgba(124,58,237,.15);color:#a78bfa;border:1px solid rgba(124,58,237,.3)" class="badge">⚡ JavaScript</span>
+          <span style="background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.3)" class="badge">📈 Chart.js</span>
+          <span style="background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.3)" class="badge">🗄️ AI4I 2020 Dataset</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────
+         PAGE 6 · CONTACT
+    ───────────────────────────────────────────────────── -->
+    <section class="page" id="page-contact">
+      <div class="section-header">
+        <div>
+          <h1>Contact Us</h1>
+          <p>Have questions or suggestions? We'd love to hear from you!</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- FORM -->
+        <div class="card">
+          <div class="card-header"><h3>✉️ Send Message</h3></div>
+          <form onsubmit="submitContact(event)" style="display:flex;flex-direction:column;gap:16px">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone (optional)</label>
+              <input type="tel" placeholder="+1 234 567 890" />
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <select>
+                <option>General Inquiry</option>
+                <option>Technical Support</option>
+                <option>Partnership / Collaboration</option>
+                <option>Bug Report</option>
+                <option>Feature Request</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">
+              📨 Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="contact-info-card">
+            <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;color:var(--accent)">Get in Touch</h3>
+            <div class="contact-info-item">
+              <div class="ci-icon">📍</div>
+              <div>
+                <h4>Location</h4>
+                <p>IBM Skillbuild — India</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>susmijapunnam@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📞</div>
+              <div>
+                <h4>Phone</h4>
+                <p>+91 — Available on request</p>
+              </div>
+            </div>
+            <div class="contact-info-item" style="margin-bottom:0">
+              <div class="ci-icon">🕐</div>
+              <div>
+                <h4>Meeting Hours</h4>
+                <p>Mon–Fri, 9:00 AM – 5:00 PM IST</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <h3 style="font-size:15px;font-weight:700;margin-bottom:14px;color:var(--accent)">Tech Stack</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="badge badge-online">Python</span>
+              <span class="badge badge-online">Scikit-learn</span>
+              <span class="badge badge-warning">IBM Watsonx</span>
+              <span class="badge badge-warning">Watson Studio</span>
+              <span style="background:rgba(124,58,237,.15);color:#a78bfa;border:1px solid rgba(124,58,237,.3)" class="badge">HTML/CSS/JS</span>
+              <span style="background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.3)" class="badge">Flask</span>
+            </div>
+            <div style="margin-top:16px">
+              <a href="https://github.com/susmijapunnam/Smart-Predictive-System-Industrial-Machinery-Using-Machine-Learning-By-IBM-Watsonx" target="_blank" class="btn btn-secondary" style="width:100%;justify-content:center">
+                🐙 View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /.page-content -->
+
+  <footer>
+    © 2024 Smart Predictive Maintenance System · All rights reserved · Powered by IBM Watsonx &amp; Machine Learning
+  </footer>
+
+</div><!-- /.main-wrap -->
+
+<script src="app.js"></script>
+<script>
+/* ── History table data ────────────────────────────────── */
+const historyData = [
+  { time:'May 31, 2024 10:24 AM', id:'MCH-9824', type:'Type H', status:'Healthy',          pct:92, acc:98.1 },
+  { time:'May 31, 2024 09:47 AM', id:'MCH-1020', type:'Type M', status:'At Risk',          pct:62, acc:97.3 },
+  { time:'May 31, 2024 08:55 AM', id:'MCH-3042', type:'Type H', status:'Failure Predicted',pct:34, acc:96.8 },
+  { time:'May 30, 2024 11:13 AM', id:'MCH-5821', type:'Type L', status:'Healthy',          pct:88, acc:98.4 },
+  { time:'May 30, 2024 10:32 AM', id:'MCH-0234', type:'Type L', status:'At Risk',          pct:71, acc:97.9 },
+  { time:'May 29, 2024 03:10 PM', id:'MCH-7731', type:'Type M', status:'Healthy',          pct:95, acc:98.7 },
+  { time:'May 29, 2024 02:44 PM', id:'MCH-4410', type:'Type H', status:'At Risk',          pct:58, acc:97.1 },
+  { time:'May 28, 2024 01:20 PM', id:'MCH-8821', type:'Type H', status:'Failure Predicted',pct:28, acc:96.5 },
+  { time:'May 28, 2024 11:05 AM', id:'MCH-2200', type:'Type M', status:'Healthy',          pct:84, acc:98.0 },
+  { time:'May 27, 2024 09:40 AM', id:'MCH-3310', type:'Type L', status:'At Risk',          pct:66, acc:97.6 },
+  { time:'May 27, 2024 08:15 AM', id:'MCH-6614', type:'Type H', status:'Healthy',          pct:90, acc:98.3 },
+  { time:'May 26, 2024 04:50 PM', id:'MCH-1122', type:'Type M', status:'Failure Predicted',pct:22, acc:96.2 },
+  { time:'May 26, 2024 03:30 PM', id:'MCH-9910', type:'Type L', status:'Healthy',          pct:87, acc:98.5 },
+  { time:'May 25, 2024 02:00 PM', id:'MCH-5500', type:'Type H', status:'At Risk',          pct:74, acc:97.8 },
+  { time:'May 25, 2024 11:45 AM', id:'MCH-8830', type:'Type M', status:'Healthy',          pct:96, acc:98.9 },
+];
+
+let currentPage = 0;
+let filteredData = [...historyData];
+
+function renderHistory() {
+  const tbody = document.getElementById('history-tbody');
+  const perPage = 10;
+  const start = currentPage * perPage;
+  const slice = filteredData.slice(start, start + perPage);
+  tbody.innerHTML = slice.map(r => {
+    const cls = r.status === 'Healthy' ? 'health-healthy' : r.status === 'At Risk' ? 'health-at-risk' : 'health-failure';
+    const barColor = r.status === 'Healthy' ? 'var(--accent3)' : r.status === 'At Risk' ? 'var(--warning)' : 'var(--danger)';
+    return `<tr>
+      <td style="color:var(--muted)">${r.time}</td>
+      <td><strong>${r.id}</strong></td>
+      <td>${r.type}</td>
+      <td><span class="health-badge ${cls}">${r.status}</span></td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px;min-width:100px">
+          <span style="font-size:12px;width:32px">${r.pct}%</span>
+          <div class="progress-bar-track" style="flex:1"><div class="progress-bar-fill" style="width:${r.pct}%;--bar-color:${barColor}"></div></div>
+        </div>
+      </td>
+      <td style="color:var(--accent3)">${r.acc}%</td>
+      <td><button class="btn btn-secondary btn-sm">View</button></td>
+    </tr>`;
+  }).join('');
+  const pageInfo = document.getElementById('page-info');
+  if (pageInfo) pageInfo.textContent = `Showing ${start+1}–${Math.min(start+perPage, filteredData.length)} of ${filteredData.length}`;
+  const countEl = document.getElementById('history-count');
+  if (countEl) countEl.textContent = `${filteredData.length} records found`;
+}
+
+function filterHistory(val) {
+  const search  = (document.getElementById('history-search')?.value || '').toLowerCase();
+  const status  = document.getElementById('filter-status')?.value  || '';
+  const type    = document.getElementById('filter-type')?.value    || '';
+  filteredData  = historyData.filter(r =>
+    (!search || r.id.toLowerCase().includes(search)) &&
+    (!status || r.status === status) &&
+    (!type   || r.type   === type)
+  );
+  currentPage = 0;
+  renderHistory();
+}
+
+function historyPage(dir) {
+  const perPage = 10;
+  const maxPage = Math.floor((filteredData.length - 1) / perPage);
+  currentPage = Math.max(0, Math.min(maxPage, currentPage + dir));
+  renderHistory();
+}
+
+/* ── Range buttons ─────────────────────────────────────── */
+function setRange(btn, range) {
+  document.querySelectorAll('[id^="range-"]').forEach(b => {
+    b.className = 'btn btn-secondary btn-sm';
+  });
+  btn.className = 'btn btn-primary btn-sm';
+  // re-render charts with different data if needed
+  setTimeout(drawAnalyticsCharts, 50);
+}
+
+/* ── Nav btn clicks (hero buttons) ────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('button[data-page]').forEach(btn => {
+    btn.addEventListener('click', () => navigate(btn.dataset.page));
+  });
+  renderHistory();
+});
+</script>
+</body>
+</html>
