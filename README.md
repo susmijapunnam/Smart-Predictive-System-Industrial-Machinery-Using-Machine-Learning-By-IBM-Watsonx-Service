@@ -8,6 +8,98 @@ The Smart Predictive System for Industrial Machinery Using Machine Learning is a
 - **Method:** AutoAI (Automated Machine Learning)
 - **Creator:** psusmija@gmail.com
 
+## 🚀 How To Start Guide
+
+Follow these steps to set up and run the Smart Predictive Maintenance System on your local machine.
+
+### 📌 Step 1: Clone the Repository
+
+Clone the project from GitHub:
+
+```bash
+git clone https://github.com/susmijapunnam/Smart-Predictive-System-Industrial-Machinery-Using-Machine-Learning-By-IBM-Watsonx.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd Smart-Predictive-System-Industrial-Machinery-Using-Machine-Learning-By-IBM-Watsonx
+```
+
+---
+
+### 📦 Step 2: Install Dependencies
+
+Create a virtual environment (optional):
+
+```bash
+python -m venv venv
+```
+
+Activate the environment:
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+Install all required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+---### 🔐 Step 3: Configure IBM Watsonx Credentials
+
+Created a `.env` file (or update your configuration file) and add your IBM Cloud credentials.
+
+```env
+IBM_API_KEY=YOUR_API_KEY
+IBM_DEPLOYMENT_URL=YOUR_DEPLOYMENT_ENDPOINT
+IBM_PROJECT_ID=YOUR_PROJECT_ID
+IBM_SPACE_ID=YOUR_SPACE_ID
+```
+### ▶️ Step 4: Run the Application
+
+Start the Flask server:
+
+```bash
+python app.py
+```
+
+Open your browser and visit:
+
+```text
+http://127.0.0.1:5000
+```
+
+The Smart Predictive Maintenance System dashboard will be available locally.
+
+---
+
+## 🌐 Live Demo
+
+The project is also deployed online. You can explore the application without any local setup.
+
+**🔗 Live Application**
+
+https://susmijapunnam.github.io/Smart-Predictive-System-Industrial-Machinery-Using-Machine-Learning-By-IBM-Watsonx/
+
+---
+
+## 📸 Application Preview
+
+After launching the application, you will have access to:
+
+- 🏠 Home Page
+- 📊 Dashboard
+- 🔮 Prediction Module
+- 📈 Analytics
+- 🕒 Prediction History
+- ℹ️ About Project
+- 📧 Contact Page
+
+
 ## 🚀 Features
 
 - Predicts machine failures before they occur
